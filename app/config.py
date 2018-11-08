@@ -2,7 +2,12 @@ class Config:
     '''
     General configuration parent class
     '''
-    pass
+    
+    HEADLINES_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
+
+    SOURCES_URL = 'https://newsapi.org/v2/sources?language=en&category={}&apiKey={}'
+
+    NEWS_API_KEY = 'f4bcda214f414713a966961fdae13472'
 
 class ProdConfig(Config):
     '''
