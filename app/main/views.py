@@ -7,8 +7,11 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    message = 'I LOVE ANNABELLE'
-    return render_template('index.html',message= message)
+    # Getting popular movie
+    popular_sources = get_sources('popular')
+    print(popular_sources)
+    name = 'Home - source'
+    return render_template('index.html', name=name,popular = popular_sources)
 
 @app.route('/news/<news_id>')
 def news(news_id):
