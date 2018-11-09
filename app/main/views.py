@@ -1,7 +1,7 @@
 from flask import render_template
-from app import app
+from . import main
 
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -13,7 +13,7 @@ def index():
     title = 'Home - source'
     return render_template('index.html', title=name,popular = popular_sources)
 
-@app.route('/news/<news_id>')
+@main.route('/news/<news_id>')
 def news(news_id):
 
     '''
