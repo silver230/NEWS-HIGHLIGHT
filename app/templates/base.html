@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% extends 'bootstrap/base.html'%}
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Welcome to the News highlights </title>
+        {% endif %}
+    </head>
+    <body>
+        <!-- Navbar block  --> 
+        {% block navbar %}
+           {% include 'navbar.html' %}
+        {% endblock %}
+        <!-- Content block --
+    </body>
+</html>
