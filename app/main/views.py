@@ -13,10 +13,10 @@ def index():
     title = 'Home - source'
     return render_template('index.html', title=name,popular = popular_sources)
 
-@main.route('/news/<news_id>')
-def news(news_id):
+@main.route('/source/<source_id>')
+def source(source_id):
 
     '''
     View movie page function that returns the movie details page and its data
     '''
-    return render_template('news.html',id = news_id)
+    return render_template('source.html',id = news_id)
