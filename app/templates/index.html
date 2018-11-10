@@ -1,17 +1,65 @@
 {% extends 'base.html'%}
-{% import 'macros.html' as macro %}
+{% import 'macros.html' as macro%}
+        <!-- Styles block -->
 
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 
-<body>
+{% endblock %}
+<!-- Content block -->
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Welcome to the News highlights</title>
+        {% endif %}
+
+    </head>
+    <body>
     {% block content %}
-    <!-- Popular movie section  -->
-    <h3>sports</h3>
-     <ul>
-        
-        <li>{{ macro.displaySourceList(sports)}}</li>
+    <div class="container" style= "padding-top:60px;">
+   <h1 style="font-size:50px; text-align:center;">ONLINE NEWS</h1>
+<!-- general source section  -->
+<div class="row">
+      <div class="col-md-3">
+            <!-- Sports news  -->
+            <h3 class="text-danger"> Sports News </h3>
+            <ul>
+                  {{ macro.displaySourceList(sports)}}
+            </ul>
+      </div>
+      <div class="col-md-3">
+            <!-- Technology news  -->
+            <h3 class="text-danger"> Technology News </h3>
+            <ul>
+                  {{ macro.displaySourceList(technology)}}
+            </ul>
+      </div>
+      <div class="col-md-3">
+            <!-- Entertainment news  -->
+            <h3 class="text-danger"> Entertainment News </h3>
+            <ul>
+                  {{ macro.displaySourceList(entertainment)}}
+            </ul>
+      </div>
+      <div class="col-md-2">
+            <!-- Business news  -->
+            <h3 class="text-danger""> Business News </h3>
+            <ul>
+                  {{ macro.displaySourceList(business)}}
+            </ul>
+      </div>
+      <div class="col-md-1">
+            <!-- Science news  -->
+            <h3 class="text-danger"> Science News </h3>
+            <ul>
+                  {{ macro.displaySourceList(science)}}
+            </ul>
+      </div>
+</div>
+</div>
 
-    </ul>
-    {% endblock %}
-</body>
-
+{% endblock%}
+    
 
