@@ -1,37 +1,17 @@
-{% extends 'base.html'%}
-{% import 'macros.html' as macro %}
-
-    <link rel="stylesheet" href="{{url_for('static',filename='css/source.css')}}">
-
-{% block content %}
-<div class="container" style = "padding-top:70px;">
-  <div id="body">
-      <div class="row mb-2" style="text-align:center;">
-          <h3> The Top Headlines</h3>
-          
-        </div>
-<div class="container">
-      
-        {% for article in articles %}
-        <ul>
-        <div class="card" style="width:400px">
-          <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image">
-          
-            
-            <div class="card-body">
-              <li class="card-title">{{article.author}}</li>
-              <!-- <h3>{{article.title}}</h3>
-              <h4 class="card-text">{{ article.description }}</h4>
-              <p>{{article.publishedAt}}</p>
-              <a href="{{article.url}}" class="btn btn-default">View Article</a> -->
-              <br>
-             </div>
-          </div>
-          </ul>
-          {%endfor%}
-  
-          
-</div>        
+{% macro displaySourceList(source_list) %}
+<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 source-card">
+        {% for source in source_list %}
+        <li><a href="/source/{{source.id}}">{{ source.name}}</a></li>
+    {% endfor %}
 </div>
+
+{% endmacro %}
+
+{% macro displayArticleList(article_list) %}
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 article-card">
+       {% for article in article_list %}
+        <li>{{ article.name}}</li>
+    {% endfor %}
 </div>
-{% endblock %}
+
+{% endmacro %}
