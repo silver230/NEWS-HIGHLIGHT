@@ -20,7 +20,7 @@ The following languages were used:
 * BOOTSTRAP
 
 ## Support and contact details
-In case of any trouble comments or contributions, please email me @dennisveer27@gmail.com
+In case of any trouble comments or contributions, please email me sylvesteromondi49@gmail.com
 
 ### License
 *MIT licence*
